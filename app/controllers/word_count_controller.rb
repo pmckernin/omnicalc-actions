@@ -17,13 +17,13 @@ class WordCountController < ApplicationController
 
   @times_in_sentence = 0 
    @text.split.each do |word|
-     if word == @special_word
+     if word.gsub(/[^a-z0-9\s]/i, "").downcase == @special_word.downcase
        @times_in_sentence = @times_in_sentence + 1
      end
    end
    
 
-    @occurrences = @times_in_sentence
+    @occurrences = "your word appeared " + @times_in_sentence.to_s
 
     # ================================================================================
     # Your code goes above.
