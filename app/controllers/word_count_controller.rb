@@ -9,13 +9,21 @@ class WordCountController < ApplicationController
     # The special word the user input is in the string @special_word.
     # ================================================================================
 
-    @word_count = "Replace this string with your answer"
+    @word_count = @text.split.count
 
-    @character_count_with_spaces = "Replace this string with your answer"
+    @character_count_with_spaces = @text.length
 
-    @character_count_without_spaces = "Replace this string with your answer"
+    @character_count_without_spaces = @text.gsub(" ","").length
 
-    @occurrences = "Replace this string with your answer"
+  @times_in_sentence = 0 
+   @text.split.each do |word|
+     if word == @special_word
+       @times_in_sentence = @times_in_sentence + 1
+     end
+   end
+   
+
+    @occurrences = @times_in_sentence
 
     # ================================================================================
     # Your code goes above.
