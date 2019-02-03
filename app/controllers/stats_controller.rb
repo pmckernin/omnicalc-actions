@@ -59,11 +59,10 @@ class StatsController < ApplicationController
     # Mode
     # ====
 
-     
-    def mode(array)
-    end  
+ 
+  
 
-    @mode = "Replace this string with your answer"
+    @mode = 
 
     # ================================================================================
     # Your code goes above.
