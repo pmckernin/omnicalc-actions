@@ -60,7 +60,7 @@ class StatsController < ApplicationController
     # ====
 
  
-   #still not working
+   
 
     @mode = 
 

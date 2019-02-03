@@ -2,11 +2,12 @@ class TextTagController < ApplicationController
   def text_tag
     @text = params.fetch("text")
 
-    # ================================================================================
-    # Your code goes below.
-    # ================================================================================
+    input = @text
+    client = Algorithmia.client('sim4JnnnVrZ6uwTGT4iOTQ99ePD1')
+    algo = client.algo('nlp/AutoTag/1.0.1')
+    result = algo.pipe(input).result
 
-    @tags = "Replace this string with your answer"
+    @tags = result
 
     # ================================================================================
     # Your code goes above.
